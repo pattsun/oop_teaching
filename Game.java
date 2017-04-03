@@ -22,6 +22,7 @@ public class Game {
           System.out.printf("\033[2J");
           System.out.println(reset+"\u001b[5;1H");
           move();
+          check();
 
           drawFrame();
           drawInfo();
@@ -78,6 +79,24 @@ public class Game {
       System.out.println(blue+"┃                   ┃                  ┃                  ┃");
       System.out.println(blue+"┃                   ┃                  ┃                  ┃");
       System.out.println(blue+"┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");      
+    }
+
+    private static void check(){
+        boolean win=true;
+        boolean lose=true;
+        for(int i=0;i<3;i++){
+          if(enemy[i]!=null){
+            if(enemy[i].getHp()>0)win=false;
+          }      
+        }
+        for(int i=0;i<3;i++){
+          if(robot[i]!=null){
+            if(robot[i].getHp()>0)lose=false;
+          }      
+        }
+        if(win)System.out.println("あなたの勝ちです。");
+        if(lose)System.out.println("あなたの負けです。");
+
     }
 
     private static void drawInfo(){
