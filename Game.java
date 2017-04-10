@@ -47,7 +47,7 @@ public class Game {
 
         for(int i=0;i<3;i++){
           enemy[i]=new Zako("ザコ"+(i+1));
-          robot[i]=new Zako("味方"+(i+1)); 
+          robot[i]=new Original("味方"+(i+1)); 
         }
         for(int i=0;i<3;i++){
           if(enemy[i]!=null){
